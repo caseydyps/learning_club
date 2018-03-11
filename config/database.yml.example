@@ -1,0 +1,25 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 127.0.0.1
+  database: lc
+  username: postgres
+  password: iwtbposkotw
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+  port: 25
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 127.0.0.1
+  database: lc_test
+  username: postgres
+  password: iwtbposkotw
