@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
   before_action :find_group
 
-  before_action :find_post, only: [:edit, :show, :update, :destroy]
+  before_action :find_post, only: [:index, :edit, :show, :update, :destroy]
+
+  def index 
+    @posts = Post.all
+  end
 
   def new
     @post = @group.posts.new
@@ -33,7 +37,8 @@ class PostsController < ApplicationController
   private
 
   def find_group
-    @group = Group.includes(:posts).find(params[:group_id])
+    # @group = Group.includes(:posts).find(params[:group_id])
+    @group = Group.first
   end
 
   def find_post
