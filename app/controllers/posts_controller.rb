@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :find_group
+  before_action :find_group, except: [:index]
 
-  before_action :find_post, only: [:index, :edit, :show, :update, :destroy]
+  before_action :find_post, only: [:edit, :show, :update, :destroy]
 
   def index 
     @posts = Post.all
@@ -37,8 +37,7 @@ class PostsController < ApplicationController
   private
 
   def find_group
-    # @group = Group.includes(:posts).find(params[:group_id])
-    @group = Group.first
+    @group = Group.includes(:posts).find(params[:group_id])
   end
 
   def find_post
