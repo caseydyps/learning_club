@@ -15,3 +15,17 @@
  */
 
 
+.navbar-default {
+    background-color: #fff;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand {
+    color: #337ab7;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #5954a4;
+}
