@@ -29,6 +29,9 @@
           <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-align-justify btn btn-default btn btn-lg"></span></a>
           <ul class="dropdown-menu">
             <% if current_user %>
+              <% if current_user&.admin? %>
+                <li><%= link_to '後台', admin_root_path %></li>
+              <% end %>
               <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
               <li><%= link_to('修改密碼', edit_user_registration_path) %></li>
             <% else %>
