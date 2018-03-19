@@ -13,14 +13,14 @@ Rails.application.routes.draw do
 
   resources :users
 
-  # namespace :admin do
+  namespace :admin do
 
 
-  #   resources :posts, only: [:index]
-  #   resources :users, only: [:index]
-  #   resources :groups, only: [:index]
+    resources :posts, only: [:index]
+    resources :users, only: [:index]
+    resources :groups, only: [:index]
 
-  #   root "posts#index"
-  # end
+    root "posts#index"
+  end
 
 end
